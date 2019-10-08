@@ -15,18 +15,18 @@
   </div>
 
   <!-- Accepts Inputs -->
-  <section class="features-icons bg-light ">
+  
     <div class="container text-center">
         <!-- Publisher -->
         <div class="col-lg-4" style="border:solid 1px black">
           <h1>IOT Switch</h1>
-          <input id="status"> 
+          <label id="status"></label>
           <input id="on" style="width:70px;" class="btn btn-primary" onclick="publishFunc()" value="ON">  
           <input id="off" style="width:70px;" class="btn btn-primary" onclick="offFunc()" value="OFF">
           <br>    
         </div>
     </div>
-  </section>
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
   <script src="public/browser-mqtt.js"></script>
