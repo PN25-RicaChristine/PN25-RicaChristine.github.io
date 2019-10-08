@@ -1,3 +1,4 @@
 # mows
 
-MQTT over Websocket Web Application
+SDElective2 Midterm - IOT Switch App
+October 8,2019

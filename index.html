@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>MQTT over Websocket</title>
+  <title>IOT Switch</title>
   <link rel="icon" href="https://icon-library.net/images/bumble-bee-icon/bumble-bee-icon-3.jpg" type="icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
@@ -10,93 +10,27 @@
 
 <body>
   <div class="jumbotron text-center">
-    <h1><img src="https://icon-library.net/images/bumble-bee-icon/bumble-bee-icon-3.jpg" width="50" height="50" >MQTT</h1>
-    <p>My MQTT Web App</p>
+    <h3>SD Elective2 Midterm - IOT Switch</h3>
+    <h6>subscribe to: <u>rica/device/status</u></h6>
   </div>
 
   <!-- Accepts Inputs -->
   <section class="features-icons bg-light ">
     <div class="container text-center">
-      
-      <div class="row">
-        <!-- Broker -->
-        <div class="col-lg-4" style="border:solid 1px black">
-          <h1>Broker</h1>
-          Address: <input id="broker" type="text" value="wss://test.mosquitto.org:8081/mqtt"><br><br>
-          <input id="connect" onclick="connectFunc()" class="btn btn-primary" value="Connect">
-          <input id="disconnect" onclick="disconnectFunc()" class="btn btn-danger" type="button" value="Disconnect" disabled><br><br>
-          Status: <input id="status" class="btn btn-default" type="button" value="_______________________"
-            disabled><br><br>
-        </div>
         <!-- Publisher -->
         <div class="col-lg-4" style="border:solid 1px black">
-          <h1>Publish</h1>
-          Topic: <input id="pub-topic" type="text" placeholder="Enter Topic here"><br><br>
-          Payload: <input id="pub-payload" type="text" placeholder="Enter Payload here"><br><br>
-          <input id="publish" class="btn btn-primary" onclick="publishFunc()" value="Publish">       
+          <h1>IOT Switch</h1>
+          <p id="status"></p> 
+          <input id="on" style="width:70px;" class="btn btn-primary" onclick="publishFunc()" value="ON">  
+          <input id="off" style="width:70px;" class="btn btn-primary" onclick="offFunc()" value="OFF">
+          <br>    
         </div>
-        <!-- Subscriber -->
-        <div class="col-lg-4" style="border:solid 1px black">
-          <h1>Subscribe</h1>
-          Topic: <input id="sub-topic" type="text" placeholder="Enter topic to subscribe"><br><br>
-          <input id="subscribe" onclick="subscribeFunc()" class="btn btn-success" type="button" value="Subscribe">
-          <input id="btnUnsubscribe" onclick="unsubscribeFunc()" class="btn btn-warning" type="button" value="Unsubscribe" disabled>
-        </div>
-
-      </div>
-
-<!-- display outputs       -->
-      <div class="row">
-        <!-- Incoming Messages -->
-          <div class="col-lg-4 ">
-              <h5>Incoming Messages</h5>
-            <table id="receiver" class="table  table-hover  ">
-              <thead style="background-color:#ff3333;color:white">
-                <th>Topic</th>
-                <th>Payload</th>
-                <th>Time Stamp</th>
-              </thead>
-              <tbody id="msg">
-      
-              </tbody>
-            </table>
-           </div>
-          <!-- Published Messages -->
-           <div class="col-lg-4 ">
-              <h5>Published Messages</h5>
-            <table id="publisher" class="table  table-hover  ">
-              <thead style="background-color: #1a8cff;color:white">
-                <th>Topic</th>
-                <th>Payload</th>
-                <th>Time Stamp</th>
-              </thead>
-              <tbody id="pubmsg">
-      
-              </tbody>
-            </table>
-           </div>
-           <!-- Topics subscribed -->
-           <div class="col-lg-4 ">
-              <h5>Topics Subscribed</h5>
-            <table id="subscriber" class="table  table-hover  ">
-              <thead style="background-color: #00cc44;color:white">
-                <th>Topic</th>
-                <th>Time Stamp</th>
-              </thead>
-              <tbody id="submsg">
-      
-              </tbody>
-            </table>
-           </div>
-      </div>
-
     </div>
-
   </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-  <script src="scripts/browserMqtt.js"></script>
-  <script src="scripts/controller.js"></script>
+  <script src="/browser-mqtt.js"></script>
+  <script src="/controller.js"></script>
 
 </body>
 
